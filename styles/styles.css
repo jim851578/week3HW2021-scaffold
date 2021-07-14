@@ -15,7 +15,7 @@ html {
 
 body {
     /* Background pattern from Subtle Patterns */
-    /*background: url('img/ignasi_pattern_s.png');*/
+    background-image: url(../img/ignasi_pattern_s.png);
     font-family: "Open Sans", sans-serif;
     /*one Em roughly ten pixels (16 x 62.5% = 10)*/
     font-size: 62.5%;
@@ -23,11 +23,16 @@ body {
     margin: 0;
     text-align: center;
 }
-/* TODO: this container class in the center of the screen using flex-direction column */
+/* Set container class in the center of the screen using flex-direction column */
+
 .container {
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 8px;
-}
+    flex-direction: column;
+    }
+
 
 ul > li {
     list-style: none;
@@ -110,6 +115,10 @@ Section - Modal
 .modal {
     /*Hidden by default */
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
     width: 100%;
     height: 100%;
     /* Fallback color */
@@ -119,11 +128,17 @@ Section - Modal
 }
 
 /* Modal Content/Box */
-/* TODO: Style this and make it look better */
+/* Styled this to make it look better */
 .modal-content {
-    
+    /* prior to styling X button in wrong spot, img and play 
+    again button are not aligned */
+    display: flex;
+    /* Aligning items top to bottom with flex-direction: column */
+    flex-direction: column;
+    /* Aligning items to center */
+    align-items: center;
     margin: 5% auto;
-    width: 80%;
+    width: 40%;
 }
 
 /* The Close Button */
@@ -143,7 +158,7 @@ Section - Modal
 /* Modal Image*/
 .modal-img {
     display: inline-block;
-    margin: 16px 0 16px;
+    margin: 16px;
     width: 320px;
 }
 
@@ -157,6 +172,7 @@ p.stats:last-child {
 
 .play-again-btn {
     background: #28e;
+    margin-top: 10px;
     margin-bottom: 16px;
 }
 
